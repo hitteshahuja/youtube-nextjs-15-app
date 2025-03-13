@@ -1,6 +1,6 @@
 
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { auth, signOut, signIn } from "@/auth";
 
 const navigation = [
@@ -31,11 +31,6 @@ export const Navigation = async () => {
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex shrink-0 items-center">
-                            <img
-                                alt="Your Company"
-                                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                                className="h-8 w-auto"
-                            />
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
@@ -80,7 +75,6 @@ export const Navigation = async () => {
                 {session && session?.user ? (
                     <div className='flex items-center gap-5'>
                         <p className='text-white'>{session.user.name}</p>
-                        <img className='rounded-full size-10' src={session.user.image} alt={session.user.name} />
                         <button onClick={() => signOut} className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sign out</button>
 
                     </div>
