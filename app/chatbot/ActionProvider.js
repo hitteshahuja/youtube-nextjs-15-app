@@ -23,13 +23,10 @@ class ActionProvider {
                 throw new Error("Invalid response format");
             }
             const messageData = {
-                text: response.answer.text,
-                maps: {
-                    embedUrl: response.answer.embed_url
-                }
+                text: response.answer.text
             };
             // Create bot message with additional metadata for maps
-            const botMessage = this.createChatBotMessage(messageData);
+            const botMessage = this.createChatBotMessage(response.answer.text);
             // render an embed if map values are present.
             console.log("Bot Message:", botMessage);
             this.setState((prev) => ({

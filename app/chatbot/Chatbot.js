@@ -45,20 +45,6 @@ const CustomMessage = (props) => {
 const ChatbotComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
     // Update the config to use custom message component
-    const customConfig = {
-        ...config,
-        customComponents: {
-            botMessageBox: (props) => {
-                console.log("botMessageBox props:", props); // Add this to debug
-                return <CustomMessage {...props} />;
-            }
-        },
-        customStyles: {
-            chatButton: {
-                backgroundColor: "#2563EB",
-            },
-        }
-    };
 
     return (
         <div className="fixed bottom-6 right-6 flex flex-col items-end" >
